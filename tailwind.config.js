@@ -6,12 +6,21 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily:{
-
+      fontFamily: {
         'myfont': ['Open Sans', 'sans-serif']
-      }
+      },
+      keyframes: {
+        underline: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+      },
+      animation: {
+        underline: 'underline 0.2s ease-in-out forwards',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 }
-
