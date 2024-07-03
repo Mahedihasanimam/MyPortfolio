@@ -18,6 +18,7 @@ const Contact = () => {
             () => {
                
              toast.success('message sent')
+             form.current.reset();
             },
             (error) => {
               console.log('FAILED...', error.text);
