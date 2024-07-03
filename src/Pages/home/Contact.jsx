@@ -2,8 +2,28 @@ import { CiLinkedin } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import toast from "react-hot-toast";
 const Contact = () => {
+    const form = useRef();
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs
+          .sendForm('service_ydxgtpr', 'template_yxrrpp4', form.current, {
+            publicKey: 'rJV8DbjidT1YSon1o',
+          })
+          .then(
+            () => {
+               
+             toast.success('message sent')
+            },
+            (error) => {
+              console.log('FAILED...', error.text);
+            },
+          );
+      };
   return (
     <div>
       <h1
@@ -15,21 +35,23 @@ const Contact = () => {
       <div className="hero ">
         <div className="hero-content w-full justify-between flex-col lg:flex-row-reverse">
           <section class="w-1/2 px-6 text-white rounded-md shadow-md ">
-            <form>
+            <form ref={form} onSubmit={sendEmail}>
               <div class="">
                 <div className="text-white">
                   <input
                     type="text"
+                    name="user_name"
                     placeholder="Your name"
                     className=" text-white w-full bg-transparent px-3 py-3 mt-2   border border-green-200 rounded-sm  focus:border-green-400 focus:ring-green-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                   />
                   <input
                     type="email"
+                    name="user_email"
                     placeholder="Your Email"
                     className=" w-full bg-transparent px-3 py-3 mt-2 text-white border border-green-200 rounded-sm  focus:border-green-400 focus:ring-green-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                   />
                   <textarea
-                    name=""
+                    name="message"
                     cols="30"
                     rows="10"
                     placeholder="Your Email"
