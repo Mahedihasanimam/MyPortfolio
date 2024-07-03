@@ -3,7 +3,7 @@ const Hero = () => {
   return (
     <section className="bg-[#1D232A] shadow-lg text-white">
       <div className="container  flex  justify-between  p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row flex-col-reverse lg:justify-between">
-        <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-4xl lg:text-left">
+        <div className="flex flex-col justify-center   rounded-sm lg:max-w-md xl:max-w-4xl text-left">
           <h1 className="text-4xl font-bold leading-none lg:text-6xl sm:text-4xl">
             Mehedi
             <span className="dark:text-violet-600"> is a</span> <br />{" "}
@@ -16,11 +16,11 @@ const Hero = () => {
             dynamic and responsive applications. I'm dedicated to continuous
             learning and delivering high-quality user experiences.
           </p>
-          <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+          <div className="flex flex-col space-y-4 sm:items-center sm:justify-start sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             <a
               rel="noopener noreferrer"
               href="about"
-              className="px-8 py-3 text-lg font-semibold border rounded border-green-500  bg-green-500 text-white transition-all duration-500"
+              className="px-8 py-3 w-fit text-lg font-semibold border rounded border-green-500  bg-green-500 text-white transition-all duration-500"
             >
               More about me
             </a>
@@ -28,7 +28,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               href="/src/assets/Mehedi_resume(front-end developer).pdf"
               download={"mehedi resume"}
-              className="px-8 py-3 text-lg font-semibold border rounded border-green-500 text-green-400 hover:bg-green-500 hover:text-white transition-all duration-500"
+              className="px-8 py-3 w-fit text-lg font-semibold border rounded border-green-500 text-green-400 hover:bg-green-500 hover:text-white transition-all duration-500"
             >
               Download Resume
             </a>

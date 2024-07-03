@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../share/Navbar";
+import Footer from "../share/Footer";
 
 
 const MainLayout = () => {
@@ -10,6 +11,7 @@ const MainLayout = () => {
             {/* outlate  */}
             <Outlet/>
             {/* footer  */}
+            <Footer/>
         </div>
     );
 };
