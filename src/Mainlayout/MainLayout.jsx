@@ -5,7 +5,7 @@ import Footer from "../share/Footer";
 
 const MainLayout = () => {
     return (
-        <div className="font-myfont  ">
+        <div className="font-myfont bg-[#1D232A] text-white ">
             {/* navbar  */}
             <Navbar/>
             {/* outlate  */}
