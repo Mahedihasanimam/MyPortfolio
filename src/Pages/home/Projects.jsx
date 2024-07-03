@@ -21,8 +21,8 @@ const Projects = () => {
   const all = allprojects;
 
   return (
-    <div className="container mx-auto my-20">
-      <h1 className="text-4xl border-b-2 border-green-500 pb-3 px-6 w-fit font-bold leading-none lg:text-6xl sm:text-4xl container lg:mx-auto md:mx-auto">
+    <div id="projects" className="container mx-auto my-20">
+      <h1 className="text-4xl border-b-2 border-green-500 pb-3 mx-6 w-fit font-bold leading-none lg:text-6xl sm:text-4xl container lg:mx-auto md:mx-auto">
         Projects
       </h1>
 

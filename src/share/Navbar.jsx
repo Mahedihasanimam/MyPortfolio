@@ -37,6 +37,18 @@ const Navbar = () => {
       </li>
       <li className="font-semibold text-lg ">
       <NavLink
+      to="/projects"
+      className={({ isActive }) =>
+        isActive
+          ? "text-green-500 p-0  border-b-2 border-[#1D232A]   hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
+          : "border-b-2 p-0  border-[#1D232A]  hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
+      }
+    >
+      <CgProfile className="lg:hidden md:hidden" /> Projects
+    </NavLink>
+      </li>
+      <li className="font-semibold text-lg ">
+      <NavLink
       to="/blog"
       className={({ isActive }) =>
         isActive
