@@ -19,7 +19,7 @@ const Hero = () => {
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             <a
               rel="noopener noreferrer"
-              
+              href="about"
               className="px-8 py-3 text-lg font-semibold border rounded border-green-500  bg-green-500 text-white transition-all duration-500"
             >
               More about me
