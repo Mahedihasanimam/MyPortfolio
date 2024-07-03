@@ -17,8 +17,8 @@ const Navbar = () => {
       to="/"
       className={({ isActive }) =>
         isActive
-          ? "text-[#FF5A3D] p-0  border-b-2 border-black  hover:border-b-2 hover:border-[#FF5A3D] hover:animate-underline hover:rounded-none"
-          : "border-b-2 p-0  border-black  hover:border-b-2 hover:border-[#FF5A3D] hover:animate-underline hover:rounded-none"
+          ? "text-green-500 p-0  border-b-2 border-[#1D232A]  hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
+          : "border-b-2 p-0  border-[#1D232A]  hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
       }
     >
       <FaHome className="lg:hidden md:hidden" /> Home
@@ -29,8 +29,8 @@ const Navbar = () => {
       to="/about"
       className={({ isActive }) =>
         isActive
-          ? "text-[#FF5A3D] p-0  border-b-2 border-black   hover:border-b-2 hover:border-[#FF5A3D] hover:animate-underline hover:rounded-none"
-          : "border-b-2 p-0  border-black  hover:border-b-2 hover:border-[#FF5A3D] hover:animate-underline hover:rounded-none"
+          ? "text-green-500 p-0  border-b-2 border-[#1D232A]   hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
+          : "border-b-2 p-0  border-[#1D232A]  hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
       }
     >
       <FaHome className="lg:hidden md:hidden" /> About
@@ -41,8 +41,8 @@ const Navbar = () => {
       to="/blog"
       className={({ isActive }) =>
         isActive
-          ? "text-[#FF5A3D] p-0  border-b-2 border-black  hover:border-b-2 hover:border-[#FF5A3D] hover:animate-underline hover:rounded-none"
-          : "border-b-2 p-0  border-black  hover:border-b-2 hover:border-[#FF5A3D] hover:animate-underline hover:rounded-none"
+          ? "text-green-500 p-0  border-b-2 border-[#1D232A]  hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
+          : "border-b-2 p-0  border-[#1D232A]  hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
       }
     >
       <FaHome className="lg:hidden md:hidden" /> Blog
@@ -52,7 +52,8 @@ const Navbar = () => {
     </div>
   );
   return (
-    <div className="navbar   bg-[#1D232A] w-full  shadow-sm  text-white ">
+    <div className="bg-[#1D232A] text-white" >
+      <div className="navbar container mx-auto  px-12  w-full  shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <div className="md:hidden pr-2" onClick={() => setopen(!open)}>
@@ -74,7 +75,7 @@ const Navbar = () => {
           to={"/"}
           className="lg:text-4xl no-underline  text-xl font-bold"
         >
-          <span className="text-green-500">M</span>EHEDI<span className="text-[#FF5A3D]">.</span>
+          <span className="text-green-500">M</span>EHEDI<span className="text-green-500">.</span>
         </Link>
       </div>
       <div className="navbar-end md:flex hidden  lg:flex pr-12">
@@ -84,6 +85,7 @@ const Navbar = () => {
       {/* <div className="navbar-end">
         <div className=" px-4"></div>
       </div> */}
+    </div>
     </div>
   );
 };

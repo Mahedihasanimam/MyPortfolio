@@ -1,9 +1,10 @@
 import React from 'react';
+import Hero from './Hero';
 
 const Home = () => {
     return (
-        <div className='w-fit'>
-            <h1>this is home</h1>
+        <div className=''>
+            <Hero/>
         </div>
     );
 };
