@@ -1,5 +1,6 @@
 [
     {
+      "id":1,
       "image": "https://media.licdn.com/dms/image/D5622AQHnvFfBjj_TAA/feedshare-shrink_800/0/1719316271224?e=1723075200&v=beta&t=2GhWnT2p2Z51JUoW3SSTR_HQF2D2QLe94R7VEiURp-w",
       "title": "Hostel Management System",
       "description": "🚀 Excited to Announce the Completion of Hostel Management System Project! 🚀\n\n✨ I’m thrilled to share that I’ve successfully developed a comprehensive Hostel Management System for university administrators and students using the MERN stack (MongoDB, Express.js, React.js, Node.js). This project was a challenging yet rewarding experience, and I’d like to highlight some key features and achievements:\n🎯 Objective: The project aims to streamline hostel operations, enhancing the student experience by providing efficient meal management and review systems.\n📝 Main Tasks and Features:\n- Responsive Design: Ensured full responsiveness across mobile, tablet, and desktop views.\n- Persistent Login: Implemented to keep users logged in after page reloads.\n- Environment Variables: Used to securely manage Firebase config keys and MongoDB credentials.\n- Alerts/Notifications: Integrated SweetAlerts and toasts for a better user experience.\n- Data Fetching: Utilized TanStack Query for efficient data fetching.\n🌟 Pages and Features:\n- Home Page: Featuring a dynamic navbar, meal categories, and a membership section.\n- Meal Detail Page: Displays comprehensive meal details, reviews, and request options.\n- Meals Page: Includes search functionality, category filters\n- Upcoming Meals: Allows premium users to interact with future meal plans.\n- Checkout Page: Integrated with Stripe for seamless package purchases.\n- Join Us Page: Offers easy registration and social login options.\n- User Dashboard: Personalized user profile, meal requests, reviews, and payment history.\n- Admin Dashboard: Advanced admin tools for managing users, meals, and reviews.\n🔧 Challenges Tackled:\n- Implemented search functionality using MongoDB indexing.\n- Set up JWT authentication for secure login.\n- Enabled server-side searching and pagination for efficient data management.",
@@ -20,6 +21,7 @@
       "category": "Fullstack"
     },
     {
+      "id":2,
       "image": "https://media.licdn.com/dms/image/D5622AQG60UocCmDXGg/feedshare-shrink_800/0/1716003725233?e=1723075200&v=beta&t=5RApxSv2tPwfVJ3yn1S5fdkT9hLcQqEi52qmLYKtXMU",
       "title": "Alternative Product Information System",
       "description": "Alternative Product Information System\n\nFeatures:\n- Users can add, update, and delete their own queries about a product.\n- Users can view other queries for alternative products on the website and see the details and recommendations.\n- Users can add recommendations for certain products.\n- Users can delete their recommendations.\n- Users can modify/delete their comments.\n- Responsive design for all devices.\n- Persistent login session without redirecting to the login page after page reload.\n- Environment variable usage to hide sensitive credentials.\n- No Lorem Ipsum text used.\n- Beautiful color contrast and visually appealing design.\n\nLayout:\n- Beautiful header with a navbar.\n- Dynamic sections based on routes.\n- Meaningful footer with website logo+name, copyright information, and social media links.\n- Custom 404 Error Page.\n\nNavbar Design:\n- Navbar displays website name+logo.\n- Conditional rendering based on user authentication status.\n- Non-logged-in users see: Home, Queries, Log-in.\n- Logged-in users see: Home, Queries, Recommendations, MyQueries, MyRecommendations, Logout.\n\nLogin & Registration Systems:\n- Login page with email/password-based login and Google Sign-in options.\n- Registration page with name, email, password, and photo URL fields.\n- Relevant error messages displayed on both login and registration pages.\n\nHome-Page:\n- Slider section to express the website's purpose.\n- Banner section with a call-to-action button to navigate to the All Queries Page.\n- Recent Queries section displaying recently added posts in a card format.\n- 2 Extra sections with creative design ideas.\n\nAddQueries (Private):\n- Private route accessible only to logged-in users.\n- Form for users to add queries about products.\n\nMyQueries (Private):\n- Private route displaying queries added by the user.\n- Stylish banner with an \"Add Queries\" button.\n- Query cards displayed in 1/2/3 column layout with options to view details, update, and delete.\n\nQueries:\n- Display all queries in descending order with relevant information in a card format.\n- Recommendations count and recommendation button for each query.\n\nQuery Details:\n- Display specific query details with recommendations.\n- Allow users to add recommendations with a form.\n- Display all recommendations for the query.\n\nMyRecommendations:\n- Display all recommendations made by the user.\n- Option to delete recommendations.\n\nRecommendationsForMe:\n- Display recommendations made by others for the user's queries.\n\nChallenges Requirements:\n- Search functionality based on product name.\n- JWT Authentication implemented for private routes.\n- Buttons for toggling the grid layout in the All Queries Page.\n- Dark/Light theme toggling in the Navbar.\n\nOptional Features:\n- Used a tailwind CSS library.\n- Added a spinner for loading states.\n- Implemented pagination for the Need Volunteer Page.",
@@ -39,6 +41,7 @@
       "category": "Fullstack"
     },
     {
+      "id":3,
       "image": "https://media.licdn.com/dms/image/D5622AQE7PyIYc0lprA/feedshare-shrink_800/0/1714632548540?e=1723075200&v=beta&t=9FUWylY0wk7LYRNWTJoRreaYknd1gbbtz54ri15Z9cU",
       "title": "Travelmentor",
       "description": "Welcome to the Travelmentor, your ultimate guide to exploring the vibrant and diverse destinations of Southeast Asia!\n\nFeatures:\n- Responsive Design: Explore our website seamlessly on any device - desktop, tablet, or mobile.\n- Private Route Handling: Reloading a private route won't redirect users to the login page.\n- Secure Authentication: Utilize password and email-based authentication with options for Google, GitHub login.\n- Environment Variable Protection: Firebase config keys and MongoDB credentials are securely stored using environment variables.\n- Creative Design: Our website boasts a unique and visually appealing design tailored for an immersive user experience.\n- Light/Dark Theme Toggle: Customize your browsing experience with our light and dark theme options.\n\nPackage for challenge task:\n- Lottie React\n- React-tooltip\n\nNavbar:\n- Navigate effortlessly with our intuitive navbar, featuring:\n  - Website logo\n  - Home\n  - All Tourist Spots\n  - Add Tourist Spot (Protected)\n  - My List (Protected)\n  - User Authentication Options (Login/Register or Profile/Logout)\n\nLogin Page:\n- Securely access your account with our password and email-based authentication, featuring:\n  - Email and password fields\n  - Google login option\n  - Register redirection link\n\nRegister Page:\n- Create your account with ease using our registration form, ensuring:\n  - Name, email, photoURL, and password fields\n  - Login redirection link\n  - Password strength verification\n\nHome Page:\n- Discover Southeast Asia's wonders through our meticulously crafted home page, comprising:\n  - Navbar and Footer on all pages\n  - Informative banner/slider with captivating visuals and descriptions\n  - Showcase of tourist spots with engaging cards and \"View Details\" button\n  - Two additional sections highlighting relevant content\n\nTourists Spots Section:\n- Delve into Southeast Asia's mesmerizing attractions with our curated selection of tourist spots, each featuring:\n  - Stunning imagery\n  - Spot name, average cost, total visitors per year, travel time, and seasonality\n  - \"View Details\" button for in-depth exploration\n\nAdd Tourists Spot Page:\n- Contribute to our community by adding your favorite tourist spots, providing:\n  - Image upload (via URL)\n  - Spot name, country name, location, description, cost, seasonality, travel time, and user information fields\n  - Success confirmation through toast notification\n\nAll Tourists Spot Page:\n- Explore a comprehensive list of tourist spots contributed by users, offering:\n  - Sort functionality based on average cost\n  - Cards displaying spot details like image, name, cost, visitors per year, travel time, and seasonality\n  - \"View Details\" button for comprehensive spot information\n\nView Details Page:\n- Dive deeper into individual tourist spots with our detailed view page, ensuring:\n  - Access restricted to logged-in users\n  - Comprehensive display of spot information stored in the database\n\nMy List Page:\n- Manage your contributed tourist spots effortlessly on your personalized list page, featuring:\n  - Exclusive access to user's added spots\n  - Tabular display of spot information\n  - Options to update or delete spots\n\nUpdate Page:\n- Modify your contributed tourist spots seamlessly with our update page/form, enabling:\n  - Editing of spot details including image, name, country, location, description, cost, seasonality, and travel time\n  - Success confirmation through toast notification\n\nDelete Functionality:\n- Remove unwanted tourist spots from the database securely, with confirmation prompts to avoid accidental deletions.\n\nFooter:\n- Wrap up your journey with our informative footer, including:\n  - Website name and copyright information\n  - Contact details and social media links for further engagement\n\n404 Page:\n- Encounter seamless navigation with our custom 404 page, ensuring a smooth user experience even in unexpected situations.\n\nLoading Spinner:\n- Stay informed with our loading spinner, indicating data loading states for a smoother browsing experience.\n\nChallenges Accomplished:\n- Countries Section: Explore information on six Southeast Asian countries, each with an image, name, and description.\n- Country-wise Tourist Spot Pages: Dive into specific country tourist spots seamlessly from the home page.\n- Light/Dark Theme Toggle: Customize your browsing experience with our dynamic theme options.\n\nAdditional Features:\n- Lottie React: Implement engaging animations to enhance user interaction.\n- React-tooltip: Provide intuitive tooltips for improved user guidance.",
@@ -56,6 +59,37 @@
         "MongoDB"
       ],
       "category": "Fullstack"
+    },
+    {
+      "id":4,
+      "image": "https://i.ibb.co/TY48f2X/screencapture-myhotel2-netlify-app-2024-07-03-20-05-59.png",
+      "title": "Hotel Booking Application",
+      "description": "Develop a frontend for a hotel booking application using React with JSX. Simulates fetching hotel and room data from a JSON file.",
+      "client_github": "https://github.com/Mahedihasanimam/hotelBooking-app",
+      "server_github": "",
+      "liveLink": "https://myhotel2.netlify.app/",
+      "technology": [
+        "React with JSX",
+        "Tailwind CSS",
+        "TanStack Query"
+      ],
+      "category": "Frontend"
+    },
+    {
+      "id":5,
+      "image": "https://i.ibb.co/MNSYRzM/screencapture-dreamdwellings-fd041-web-app-2024-07-03-20-07-08.png",
+      "title": "Alternative Product Information System",
+      "description": "A system for managing and viewing product queries and recommendations. Includes features for adding, updating, and deleting queries and recommendations.",
+      "client_github": "https://github.com/Mahedihasanimam/DreamDwellings",
+      "server_github": "",
+      "liveLink": "https://altprodinfo.web.app/",
+      "technology": [
+        "React",
+        "Tailwind CSS",
+        "JWT Authentication"
+      ],
+      "category": "Frontend"
     }
+    
   ]
   

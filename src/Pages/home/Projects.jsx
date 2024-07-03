@@ -17,7 +17,7 @@ const Projects = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   const fullstack = allprojects?.filter((p) => p?.category === 'Fullstack');
-  const frontend = allprojects?.filter((p) => p?.category === 'Front-end');
+  const frontend = allprojects?.filter((p) => p?.category === 'Frontend');
   const all = allprojects;
 
   return (
