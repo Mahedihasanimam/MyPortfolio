@@ -9,10 +9,12 @@ const Skills = () => {
     return (
         <div className="container mx-auto mb-12">
             <h1 className="text-4xl border-b-2 border-green-500 pb-3 container lg:mx-auto md:mx-auto 
-             w-fit font-bold leading-none lg:text-6xl sm:text-4xl mb-12">
+             w-fit font-bold leading-none lg:text-6xl sm:text-4xl mb-12 mx-6"data-aos="fade-up"
+             data-aos-easing="linear"
+             data-aos-duration="1000">
              My Skills
             </h1>
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 gap-6'>
                 <SkilCard name={'HTML'} icon={<FaHtml5 size={200} color="#E34F26"/>}/>
                 <SkilCard name={'CSS'} icon={<FaCss3Alt size={200} color="#1572B6"/>}/>
                 <SkilCard name={'Tailwind CSS'} icon={<RiTailwindCssFill size={200} color="#06B6D4"/>}/>

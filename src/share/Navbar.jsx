@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const navbar = (
     <div className="gap-4 lg:flex md:flex items-center bg-[#1D232A] space-y-2 ">
-      <li className="font-semibold ">
+      <li className="font-semibold text-lg">
       <NavLink
       to="/"
       className={({ isActive }) =>
@@ -23,7 +23,7 @@ const Navbar = () => {
       <FaHome className="lg:hidden md:hidden" /> Home
     </NavLink>
       </li>
-      <li className="font-semibold ">
+      <li className="font-semibold text-lg ">
       <NavLink
       to="/about"
       className={({ isActive }) =>
@@ -35,7 +35,7 @@ const Navbar = () => {
       <CgProfile className="lg:hidden md:hidden" /> About
     </NavLink>
       </li>
-      <li className="font-semibold ">
+      <li className="font-semibold text-lg ">
       <NavLink
       to="/blog"
       className={({ isActive }) =>
@@ -52,7 +52,7 @@ const Navbar = () => {
   );
   return (
     <div className="bg-[#1D232A] text-white" >
-      <div className="navbar container  mx-auto  px-12  w-full  shadow-sm">
+      <div className="navbar container  mx-auto  bg-[#1D232A] px-12   w-full  shadow-sm">
       <div className="navbar-start flex lg:justify-start md:justify-start justify-between  w-full">
         <div className="dropdown">
           <div className="md:hidden pr-2" onClick={() => setopen(!open)}>
@@ -63,7 +63,7 @@ const Navbar = () => {
             )}
             <ul
               className={`menu absolute duration-1000
-            ${open ? "-right-32 px-8" : "right-16"}
+            ${open ? "-right-32 px-8" : "right-20"}
             mt-3 z-[2] p-2 shadow bg-[#1D232A] h-lvh w-52`}
             >
               {navbar}
