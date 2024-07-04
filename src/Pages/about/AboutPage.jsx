@@ -4,8 +4,8 @@ import heroimg from "../../assets/profile-pic (8).png";
 const AboutPage = () => {
   return (
     <div>
-      <section id="about" className="bg-[#1D232A] shadow-lg text-white">
-        <div className="container  flex  justify-between  p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row flex-col-reverse lg:justify-between">
+      <section id="about" className="bg-[#1D232A] shadow-lg text-white container mx-auto">
+        <div className="  flex  justify-between  p-6 sm:py-12 lg:py-24 lg:flex-row flex-col-reverse lg:justify-between">
           <div className="flex items-center justify-start lg:p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
             <img
               src={heroimg}
