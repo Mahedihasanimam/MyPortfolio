@@ -10,7 +10,7 @@ const Navbar = () => {
   const [open, setopen] = useState(false);
 
   const navbar = (
-    <div className="gap-4 lg:flex md:flex items-center bg-[#1D232A] space-y-2 ">
+    <div className="gap-8 lg:flex md:flex  items-center bg-[#1D232A] space-y-2 ">
       <li className="font-semibold text-lg">
       <NavLink
       to="/"

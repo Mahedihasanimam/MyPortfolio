@@ -26,7 +26,7 @@ const Contact = () => {
           );
       };
   return (
-    <div>
+    <div >
       <h1
         className="text-4xl border-b-2 border-green-500 pb-3 container lg:mx-auto 
      w-fit font-bold leading-none lg:text-4xl sm:text-4xl mb-4 mx-6 uppercase"

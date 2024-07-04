@@ -24,7 +24,7 @@ const Hero = () => {
               More about me
             </a>
             <a
-              rel="noopener noreferrer"
+              rel="noopener noreferrer no wraper"
               href="/src/assets/Mehedi_resume(front-end developer).pdf"
               download={"mehedi resume"}
               className="px-8 py-3 w-fit text-lg font-semibold border rounded border-green-500 text-green-400 hover:bg-green-500 hover:text-white transition-all duration-500"

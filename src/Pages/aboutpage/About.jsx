@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import heroimg from "../../assets/profile-pic (8).png";
 const About = () => {
   return (
@@ -37,7 +38,7 @@ const About = () => {
             hands-on experience in developing web applications . i want to start
             my career as a front-end developer
           </p>
-          <a
+          <Link to={'/contact'}
             rel="noopener noreferrer"
             className="px-8 py-3 btn w-fit text-lg font-semibold border rounded border-green-500 bg-green-500 hover:text-white hover:border-2 hover:bg-transparent hover:border-green-500 text-white transition-all duration-500"
             data-aos="fade-up"
@@ -45,7 +46,7 @@ const About = () => {
             data-aos-duration="1000"
           >
             contact now
-          </a>
+          </Link>
         </div>
       </div>
 
