@@ -55,7 +55,7 @@ const Contact = () => {
                     name="message"
                     cols="30"
                     rows="10"
-                    placeholder="Your Email"
+                    placeholder="Your Message"
                     className=" w-full bg-transparent px-3 py-3 mt-2 text-white  border border-green-200 rounded-sm  focus:border-green-400 focus:ring-green-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                   ></textarea>
                 </div>
@@ -72,7 +72,7 @@ const Contact = () => {
             </form>
           </section>
           <div className="text-center max-w-lg lg:text-left">
-            <h1 className="text-4xl font-bold">Getting in touch is easy!</h1>
+            <h1 className="lg:text-4xl text-xl font-bold">Getting in touch is easy!</h1>
             <div className="space-y-4 mt-4">
               <p className="">mymensingh,bangladesh</p>
               <p>+8801860650703</p>
