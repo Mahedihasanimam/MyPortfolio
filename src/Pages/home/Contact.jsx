@@ -35,7 +35,7 @@ const Contact = () => {
       </h1>
       <div className="hero ">
         <div className="hero-content w-full justify-between flex-col lg:flex-row-reverse">
-          <section class="w-1/2 px-6 text-white rounded-md shadow-md ">
+          <section class="lg:w-1/2 w-full  px-6 text-white rounded-md shadow-md ">
             <form ref={form} onSubmit={sendEmail}>
               <div class="">
                 <div className="text-white">

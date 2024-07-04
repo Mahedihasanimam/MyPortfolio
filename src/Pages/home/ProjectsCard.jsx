@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from "react-icons/fa6";
-const ProjectsCard = ({ project }) => {
+const 
+ProjectsCard = ({ project }) => {
     const { image, title, description,id,liveLink,client_github,server_github} = project;
 
     return (
         <div className="relative max-h-96 overflow-hidden group">
             {/* Background overlay on hover */}
-            <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300 z-10 top-1/2 cursor-pointer ">
+            <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300 z-10 lg:top-1/2 top-1/3 cursor-pointer ">
             <div className='p-6 max-w-xl text-center mx-auto space-y-4'>
             <p className='text-xl font-bold text-center '>{title}</p>
             <p>{description.slice(0,100)}</p>
