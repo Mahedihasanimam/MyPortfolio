@@ -6,6 +6,7 @@ import Skills from './Skills';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import Contact from './Contact';
+import ServiceSection from '../../Components/Services';
 // ..
 AOS.init();
 const Home = () => {
@@ -15,6 +16,8 @@ const Home = () => {
             <About/>
             <Skills/>
             <Projects/>
+
+            <ServiceSection/>
             <Contact/>
         </div>
     );

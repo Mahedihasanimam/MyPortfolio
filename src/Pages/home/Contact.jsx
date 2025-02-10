@@ -27,12 +27,19 @@ const Contact = () => {
       };
   return (
     <div >
-      <h1
-        className="text-4xl border-b-2 border-green-500 pb-3 container lg:mx-auto 
-     w-fit font-bold leading-none lg:text-4xl sm:text-4xl mb-4 mx-6 uppercase"
-      >
-        sent me a message
-      </h1>
+     <div className="text-center mx-auto max-w-xl">
+  <h1
+    className="text-4xl border-b-4 border-green-500 pb-3 mx-auto 
+    w-fit font-extrabold leading-tight text-white lg:text-5xl sm:text-4xl 
+    mb-4 uppercase tracking-wide"
+  >
+    Send Me a Message
+  </h1>
+  <p className="text-lg text-gray-300 mt-2">
+    Have a question or want to work together? Feel free to reach out, and I'll get back to you as soon as possible.
+  </p>
+</div>
+    
       <div className="hero ">
         <div className="hero-content w-full justify-between flex-col lg:flex-row-reverse">
           <section class="lg:w-1/2 w-full  px-6 text-white rounded-md shadow-md ">

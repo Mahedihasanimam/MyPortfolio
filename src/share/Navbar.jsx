@@ -1,104 +1,92 @@
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom"
+import { LuMenu } from "react-icons/lu"
+import { MdOutlineClose } from "react-icons/md"
+import { FaHome } from "react-icons/fa"
+import { CgProfile } from "react-icons/cg"
+import { FaBlogger } from "react-icons/fa"
+import { useMobileMenu } from "../hooks/UseMobileMenu"
 
-import { LuMenu } from "react-icons/lu";
-import { MdOutlineClose } from "react-icons/md";
-import { FaHome } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
-import { FaBlogger } from "react-icons/fa";
+const navItems = [
+  { to: "/", label: "Home", icon: FaHome },
+  { to: "/about", label: "About", icon: CgProfile },
+  { to: "/services", label: "services", icon: CgProfile },
+  { to: "/projects", label: "Projects", icon: CgProfile },
+  { to: "/blog", label: "Blog", icon: FaBlogger },
+]
+
 const Navbar = () => {
-  const [open, setopen] = useState(false);
+  const location = useLocation()
+  const { isOpen, toggleMenu } = useMobileMenu()
 
-  const navbar = (
-    <div className="gap-8 lg:flex md:flex  items-center bg-[#1D232A] space-y-2 ">
-      <li className="font-semibold text-lg">
-      <NavLink
-      to="/"
-      className={({ isActive }) =>
-        isActive
-          ? "text-green-500 p-0  border-b-2 pt-2 border-[#1D232A]   hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
-          : "border-b-2 p-0  border-[#1D232A]  hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
-      }
-    >
-      <FaHome className="lg:hidden md:hidden" /> Home
-    </NavLink>
-      </li>
-      <li className="font-semibold text-lg ">
-      <NavLink
-      to="/about"
-      className={({ isActive }) =>
-        isActive
-          ? "text-green-500 p-0  border-b-2 border-[#1D232A]   hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
-          : "border-b-2 p-0  border-[#1D232A]  hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
-      }
-    >
-      <CgProfile className="lg:hidden md:hidden" /> About
-    </NavLink>
-      </li>
-      <li className="font-semibold text-lg ">
-      <NavLink
-      to="/projects"
-      className={({ isActive }) =>
-        isActive
-          ? "text-green-500 p-0  border-b-2 border-[#1D232A]   hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
-          : "border-b-2 p-0  border-[#1D232A]  hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
-      }
-    >
-      <CgProfile className="lg:hidden md:hidden" /> Projects
-    </NavLink>
-      </li>
-      <li className="font-semibold text-lg ">
-      <NavLink
-      to="/blog"
-      className={({ isActive }) =>
-        isActive
-          ? "text-green-500 p-0  border-b-2 border-[#1D232A]  hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
-          : "border-b-2 p-0  border-[#1D232A]  hover:border-b-2 hover:border-green-500 hover:animate-underline hover:rounded-none"
-      }
-    >
-      <FaBlogger className="lg:hidden md:hidden" /> Blog
-    </NavLink>
-      </li>
-     
-    </div>
-  );
   return (
-    <div className="bg-[#1D232A] text-white" >
-      <div className="navbar container  mx-auto  bg-[#1D232A] px-12   w-full  shadow-sm">
-      <div className="navbar-start flex lg:justify-start md:justify-start justify-between  w-full">
-        <div className="dropdown">
-          <div className="md:hidden pr-2" onClick={() => setopen(!open)}>
-            {open === true ? (
-              <MdOutlineClose className="text-2xl "></MdOutlineClose>
-            ) : (
-              <LuMenu className="text-2xl"></LuMenu>
-            )}
-            <ul
-              className={`menu absolute duration-1000
-            ${open ? "-right-32 px-8" : "right-20"}
-            mt-3 z-[2] p-2 shadow bg-[#1D232A] h-lvh w-52`}
+    <nav className="bg-black text-white shadow-md">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center">
+            <Link to="/" className="text-2xl sm:text-3xl font-bold">
+              <span className="text-green-500">M</span>EHEDI
+              <span className="text-green-500">.</span>
+            </Link>
+          </div>
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  className={({ isActive }) =>
+                    `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                      isActive ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+          </div>
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-expanded={isOpen}
             >
-              {navbar}
-            </ul>
+              <span className="sr-only">Open main menu</span>
+              {isOpen ? (
+                <MdOutlineClose className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <LuMenu className="block h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
           </div>
         </div>
-        <Link
-          to={"/"}
-          className="lg:text-4xl no-underline  text-xl font-bold"
-        >
-          <span className="text-green-500">M</span>EHEDI<span className="text-green-500">.</span>
-        </Link>
-      </div>
-      <div className="navbar-end md:flex hidden  lg:flex pr-12">
-        <ul className="menu menu-horizontal px-1">{navbar}</ul>
       </div>
 
-      {/* <div className="navbar-end">
-        <div className=" px-4"></div>
-      </div> */}
-    </div>
-    </div>
-  );
-};
+      {/* Mobile menu, show/hide based on menu state. */}
+      <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  isActive ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                }`
+              }
+              onClick={toggleMenu}
+            >
+              <span className="flex items-center">
+                <item.icon className="mr-3 h-5 w-5" />
+                {item.label}
+              </span>
+            </NavLink>
+          ))}
+        </div>
+      </div>
+    </nav>
+  )
+}
 
-export default Navbar;
+export default Navbar
+

@@ -1,7 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 import ProjectsCard from "./ProjectsCard";
 
 const Projects = () => {
@@ -13,51 +11,27 @@ const Projects = () => {
     },
   });
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-
-  const fullstack = allprojects?.filter((p) => p?.category === 'Fullstack');
-  const frontend = allprojects?.filter((p) => p?.category === 'Frontend');
-  const all = allprojects;
+  if (isLoading) return <div className="text-center text-xl">Loading...</div>;
+  if (error) return <div className="text-center text-xl text-red-500">Error: {error.message}</div>;
 
   return (
-    <div id="projects" className="container mx-auto my-20">
-      <h1 className="text-4xl border-b-2 border-green-500 pb-3 mx-6 w-fit font-bold leading-none lg:text-6xl sm:text-4xl container lg:mx-auto md:mx-auto">
-        Projects
-      </h1>
+    <div id="projects" className="container mx-auto my-20 px-6 lg:px-12">
+     <div className="max-w-2xl mx-auto text-center space-y-2 mb-8 ">
+  <h1 className="text-4xl border-b-4 border-green-500 pb-3 mx-auto 
+    w-fit font-extrabold leading-tight text-white lg:text-5xl sm:text-4xl 
+    mb-2 uppercase tracking-wide">
+    My Projects
+  </h1>
+  <p className="text-gray-200 text-lg">
+  Discover my top projects, built with modern tech and a passion for clean, functional design.
+  </p>
+</div>
 
-      <div>
-        <Tabs>
-          <div className="w-fit mx-auto my-6">
-            <TabList>
-              <Tab>Full Stack</Tab>
-              <Tab>Front-end</Tab>
-              <Tab>All Projects</Tab>
-            </TabList>
-          </div>
 
-          <TabPanel>
-            <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 px-6">
-              {fullstack?.map((project) => (
-                <ProjectsCard key={project.id} project={project} />
-              ))}
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 px-6">
-              {frontend?.map((project) => (
-                <ProjectsCard key={project.id} project={project} />
-              ))}
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 px-6">
-              {all?.map((project) => (
-                <ProjectsCard key={project.id} project={project} />
-              ))}
-            </div>
-          </TabPanel>
-        </Tabs>
+      <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-8">
+        {allprojects?.map((project) => (
+          <ProjectsCard key={project.id} project={project} />
+        ))}
       </div>
     </div>
   );
