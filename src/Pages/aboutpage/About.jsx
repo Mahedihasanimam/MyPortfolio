@@ -24,7 +24,7 @@ const About = () => {
     { 
       category: "Frontend", 
       icon: <FaCode className="text-emerald-400 text-xl" />,
-      items: ["HTML5", "CSS3", "JavaScript", "React", "Tailwind CSS", "Bootstrap"]
+      items: ["HTML5", "CSS3", "JavaScript", "React","Next.js", "Tailwind CSS", "Bootstrap"]
     },
     { 
       category: "Backend", 
@@ -34,12 +34,12 @@ const About = () => {
     { 
       category: "Tools", 
       icon: <FaTools className="text-emerald-400 text-xl" />,
-      items: ["Git", "VS Code", "Figma", "npm"]
+      items: ["Git", "VS Code", "Figma", "npm","RTK QUERY"]
     },
     { 
       category: "Currently Learning", 
       icon: <FaLaptopCode className="text-emerald-400 text-xl" />,
-      items: ["TypeScript", "Next.js", "RTK QUERY"]
+      items: ["Figma", "Fremar motion", "Mobile app publishing"]
     }
   ];
 

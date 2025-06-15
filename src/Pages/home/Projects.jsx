@@ -1,34 +1,119 @@
 import { useState, useMemo } from "react";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import ProjectsCard from "./ProjectsCard";
 import { motion, AnimatePresence } from "framer-motion";
+import travel from '../../../src/assets/travel.png'
+import course from '../../../src/assets/course.png'
+import property from '../../../src/assets/property.png'
+import assets from '../../../src/assets/assets.png'
+import bookingdashboard from '../../../src/assets/bookingdashboard.png'
+import pantogonostisdashboard from '../../../src/assets/pantogonostisdashboard.png'
+import ai from '../../../src/assets/ai.png'
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
-  const { data: projects, isLoading, isError, error } = useQuery({
-    queryKey: ["projects"],
-    queryFn: async () => {
-      const { data } = await axios.get("projects.json");
-      return data;
+  
+  // Static projects data with unique IDs and consistent tags
+  const projects = useMemo(() => [
+    {
+      id: 1,
+      title: "Ai Chatbot Website",
+      description: "A AI CHATBOT and sarvey website with awesome ui/ux ",
+      technologies: ["React js", "Tailwind", "Ant Design", "JavaScript"],
+      image: ai,
+      liveLink: "https://chatbotai-wine.vercel.app",
+      githubLink: "https://github.com/Mahedihasanimam/chatbot-ai",
+      tags: ["all", "frontend"]
     },
-    refetchOnWindowFocus: false,
-    staleTime: 300000, // 5 minutes cache
-  });
+    {
+      id: 2,
+      title: "Adventure Travel",
+      description: "A responsive travel website with modern UI components and smooth animations built with pure HTML, CSS, and JavaScript.",
+      technologies: ["HTML5", "CSS3", "JavaScript", "GSAP"],
+      image: travel,
+      liveLink: "https://mahedihasanimam.github.io/adventure-travel",
+      githubLink: "https://github.com/Mahedihasanimam/adventure-travel",
+      tags: ["all", "frontend"]
+    },
+    {
+      id: 3,
+      title: "Circooles - Online Course Platform",
+      description: "Modern e-learning platform with dashboard, course management, and user authentication.",
+      technologies: ["React", "Tailwind CSS", "Redux", "Firebase"],
+      image: course,
+      liveLink: "https://circooles-groth.vercel.app/",
+      githubLink: "https://github.com/Mahedihasanimam/circooles-Groth",
+      tags: ["all", "fullstack", "frontend"]
+    },
+    {
+      id: 4,
+      title: "Appartly - Property Booking",
+      description: "Full-stack property rental platform with search filters, booking system, and user profiles.",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      image: property,
+      liveLink: "https://appartly-frontend.vercel.app/",
+      githubLink: "https://github.com/Mahedihasanimam/appartly-frontend",
+      tags: ["all", "fullstack"]
+    },
+    {
+      id: 5,
+      title: "Assets Management Dashboard",
+      description: "Admin dashboard with analytics, assets management.",
+      technologies: ["React", "Redux Toolkit", "Chart.js", "Ant Design"],
+      image: assets,
+      liveLink: "https://nico-silk.vercel.app/inspections-activity",
+      githubLink: "https://github.com/Mahedihasanimam/nico",
+      tags: ["all", "dashboard"]
+    },
+    {
+      id: 6,
+      title: "Property Booking Dashboard",
+      description: "Admin dashboard with analytics, user and property management.",
+      technologies: ["React", "Redux Toolkit", "Rechart js", "Ant Design"],
+      image: bookingdashboard,
+      liveLink: "https://appartly-dashboard.vercel.app/",
+      githubLink: "https://github.com/Mahedihasanimam/appartly-dashboard",
+      tags: ["all", "dashboard"]
+    },
+    {
+      id: 7,
+      title: "Course Manage Admin Dashboard",
+      description: "Course maintain Admin Dashboard",
+      technologies: ["React", "Redux Toolkit", "Rechart js", "Ant Design"],
+      image: pantogonostisdashboard,
+      liveLink: "https://dimitriz-user-dashboard.vercel.app/",
+      githubLink: "https://github.com/Mahedihasanimam/dimitriz-dshboard",
+      tags: ["all", "dashboard"]
+    },
+  ], []);
 
-  // Extract unique categories
+  // Extract unique categories with case normalization
   const categories = useMemo(() => {
-    if (!projects) return [];
-    const allTags = projects.flatMap(project => project.tags || []);
-    return ["all", ...new Set(allTags)];
+    const tagSet = new Set();
+    const uniqueTags = [];
+    
+    projects.forEach(project => {
+      project.tags?.forEach(tag => {
+        const normalizedTag = tag.toLowerCase();
+        if (!tagSet.has(normalizedTag)) {
+          tagSet.add(normalizedTag);
+          uniqueTags.push(tag); // Preserve original casing for display
+        }
+      });
+    });
+    
+    // Move "all" to the front
+    return ["all", ...uniqueTags.filter(tag => tag !== "all")];
   }, [projects]);
 
   // Filter projects based on selection
   const filteredProjects = useMemo(() => {
-    if (!projects) return [];
     return activeFilter === "all" 
       ? projects 
-      : projects.filter(project => project.tags?.includes(activeFilter));
+      : projects.filter(project => 
+          project.tags?.some(tag => 
+            tag.toLowerCase() === activeFilter.toLowerCase()
+          )
+        );
   }, [projects, activeFilter]);
 
   // Animation variants
@@ -73,77 +158,43 @@ const Projects = () => {
         </div>
 
         {/* Category Filters */}
-       
-
-        {/* Loading State */}
-        {isLoading && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[...Array(6)].map((_, idx) => (
-              <div 
-                key={idx} 
-                className="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700/50 animate-pulse"
-              >
-                <div className="h-48 bg-gray-800" />
-                <div className="p-6">
-                  <div className="h-6 bg-gray-800 rounded mb-4 w-3/4" />
-                  <div className="h-4 bg-gray-800 rounded mb-2 w-full" />
-                  <div className="h-4 bg-gray-800 rounded mb-2 w-5/6" />
-                  <div className="h-4 bg-gray-800 rounded mb-2 w-4/6" />
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    <div className="h-6 bg-gray-800 rounded-full w-16" />
-                    <div className="h-6 bg-gray-800 rounded-full w-16" />
-                    <div className="h-6 bg-gray-800 rounded-full w-16" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Error State */}
-        {isError && (
-          <motion.div 
-            className="text-center py-16 rounded-xl bg-gray-800/50 border border-gray-700/50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            <div className="text-5xl mb-6">⚠️</div>
-            <h3 className="text-2xl font-bold text-white mb-3">Data Loading Error</h3>
-            <p className="text-gray-400 max-w-xl mx-auto mb-6">
-              {error.message || "Failed to load projects. Please check your network connection."}
-            </p>
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {categories?.map((category) => (
             <button
-              onClick={() => window.location.reload()}
-              className="px-6 py-3 bg-emerald-600 rounded-lg font-medium hover:bg-emerald-700 transition-colors"
+              key={category}
+              onClick={() => setActiveFilter(category)}
+              className={`px-4 py-2 rounded-full text-sm font-medium capitalize transition-all duration-300 ${
+                activeFilter === category
+                  ? "bg-emerald-600 text-white shadow-lg shadow-emerald-500/20"
+                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+              }`}
             >
-              Reload Projects
+              {category === "all" ? "All Projects" : category}
             </button>
-          </motion.div>
-        )}
+          ))}
+        </div>
 
         {/* Projects Grid */}
         <AnimatePresence>
-          {!isLoading && !isError && (
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              variants={container}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-            >
-              {filteredProjects.map((project) => (
-                <motion.div key={project.id} variants={item} layout>
-                  <ProjectsCard project={project} />
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            {filteredProjects?.map((project) => (
+              <motion.div key={project.id} variants={item} layout>
+                <ProjectsCard project={project} />
+              </motion.div>
+            ))}
+          </motion.div>
         </AnimatePresence>
 
         {/* Empty State */}
-        {!isLoading && !isError && filteredProjects.length === 0 && (
+        {filteredProjects.length === 0 && (
           <motion.div
-            className="text-center py-16 rounded-xl bg-gray-800/50 border border-gray-700/50"
+            className="text-center py-16 rounded-xl bg-gray-800/50 border border-gray-700/50 mt-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >

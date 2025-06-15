@@ -147,11 +147,11 @@ const Hero = () => {
             {/* Stats Section */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
               <div className="text-center p-4 bg-gray-900/30 backdrop-blur-sm rounded-xl border border-gray-700/50">
-                <div className="text-3xl font-bold text-emerald-400">5+</div>
+                <div className="text-3xl font-bold text-emerald-400">27+</div>
                 <div className="text-sm text-gray-400 mt-1">Projects</div>
               </div>
               <div className="text-center p-4 bg-gray-900/30 backdrop-blur-sm rounded-xl border border-gray-700/50">
-                <div className="text-3xl font-bold text-emerald-400">3+</div>
+                <div className="text-3xl font-bold text-emerald-400">1+</div>
                 <div className="text-sm text-gray-400 mt-1">Years Experience</div>
               </div>
               <div className="text-center p-4 bg-gray-900/30 backdrop-blur-sm rounded-xl border border-gray-700/50">
@@ -177,7 +177,7 @@ const Hero = () => {
               </Link>
               
               <a
-                href="/public/mehedi-resumeUpdated (1).pdf"
+                href="/public/mehediResume.pdf"
                 download="Mehedi_Hasan_Resume.pdf"
                 className="px-8 py-4 text-lg font-semibold rounded-lg border-2 border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10 transform hover:-translate-y-0.5 focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-50 flex items-center group"
               >
